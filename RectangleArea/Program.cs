@@ -11,7 +11,7 @@ namespace RectangleArea
         static void Main(string[] args)
         {
             //vnes
-
+              
             //presmetka
 
             //izlez
