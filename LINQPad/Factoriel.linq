@@ -2,8 +2,10 @@
 
 void Main()
 {
-	var f = Factoriel(35);
-	f.Dump();
+	var balls = 20;
+	var drawn = 5;
+	var combinations = GetCombinations(balls, drawn)
+	combinations.Dump();
 }
 
 long Factoriel(long number){
