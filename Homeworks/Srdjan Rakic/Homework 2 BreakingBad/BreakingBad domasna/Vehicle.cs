@@ -4,15 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BreakingBad_homework
+namespace BreakingBad
 {
     class Vehicle
     {
-        private string name;
-        private string manufacturer;
-        private int year;
-        private string color;
-
         public string Name { get; set; }
         public string Manufacturer { get; set; }
         public int Year { get; set; }
@@ -26,20 +21,11 @@ namespace BreakingBad_homework
             Color = color;
         }
 
-        public string getFullCarName()
+        public string GetFullCarName()
         {
             return Manufacturer + " - " + Name;
         }
 
-        public int getYear()
-        {
-            return Year;
-        }
-
-        public string getVehicleColor()
-        {
-            return Color;
-        }
     }
 
 }

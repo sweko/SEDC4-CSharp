@@ -4,14 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BreakingBad_homework
+namespace BreakingBad
 {
     class Address
     {
-        private string city;
-        private string streetName;
-        private string streetNumber;
-
+       
         public Address(string city, string streetName, string streetNumber)
         {
             City = city;
@@ -23,7 +20,7 @@ namespace BreakingBad_homework
         public string StreetName { get; set; }
         public string StreetNumber { get; set; }
 
-        public string getFullAddress()
+        public string GetFullAddress()
         {
             return StreetName + ", no." + StreetNumber + ", " + City;
         }

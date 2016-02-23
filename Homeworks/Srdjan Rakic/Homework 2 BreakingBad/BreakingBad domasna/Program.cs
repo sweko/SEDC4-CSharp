@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BreakingBad_homework
+namespace BreakingBad
 {
     class Program
     {
@@ -22,7 +22,7 @@ namespace BreakingBad_homework
 
             foreach (Person character in characters)
             {
-                Console.WriteLine($"Full Name: {character.FullName}\nAge: {character.Age}\nAddress: {character.Address.getFullAddress()}\nVehicle: {character.Vehicle.getFullCarName()}\nYear: {character.Vehicle.getYear()}\nColor: {character.Vehicle.getVehicleColor()}\n");
+                Console.WriteLine($"Full Name: {character.FullName}\nAge: {character.Age}\nAddress: {character.Address.GetFullAddress()}\nVehicle: {character.Vehicle.GetFullCarName()}\nYear: {character.Vehicle.Year}\nColor: {character.Vehicle.Color}\n");
             }
 
             Console.ReadLine();
