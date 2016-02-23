@@ -25,8 +25,15 @@ namespace ClassesExample
                 Console.WriteLine($"Full Name: {character.FullName}\nAge: {character.Age}\nAddress: {character.Address.GetFullAddress()}\nVehicle: {character.Car.GetFullCarName()}\nYear: {character.Car.Year}\n");
             }
 
-            Console.ReadLine();
+            Console.WriteLine("--------------");
+            var weko = new Person(
+                "Wekoslav", 
+                "Stefanovski",
+                new Address("Skopje", "Infinity Drive", "1"),
+                null
+            );
 
+            Console.WriteLine(weko.FullName);
 
             /*
             var weko = new Person("Wekoslav","Stefanovski", 0x26);
