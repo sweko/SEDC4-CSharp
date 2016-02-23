@@ -4,24 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BreakingBad_homework
+namespace BreakingBad
 {
     class Person
     {
         private string firstName;
         private string lastName;
         private int age;
-        private Address address;
-        private Vehicle vehicle;
-        public int Age
-        {
-            get { return age; }
-            set
-            {
-                if (value < 0) throw new Exception($"Invalid age value of {value}.");
-                this.age = value;
-            }
-        }
 
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -40,6 +29,17 @@ namespace BreakingBad_homework
                 lastName = names[1];
             }
         }
+
+        public int Age
+        {
+            get { return age; }
+            set
+            {
+                if (value < 0) throw new Exception($"Invalid age value of {value}.");
+                this.age = value;
+            }
+        }
+
         public Address Address { get; set; }
         public Vehicle Vehicle { get; set; }
 

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BreakingBad homework", "BreakingBad domasna\BreakingBad homework.csproj", "{D5023BD3-19E2-4A1D-8843-2D884F624249}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BreakingBad", "BreakingBad domasna\BreakingBad.csproj", "{D5023BD3-19E2-4A1D-8843-2D884F624249}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
