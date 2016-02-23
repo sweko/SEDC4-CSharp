@@ -17,6 +17,11 @@ namespace ClassesExample
             this.Car = car;
         }
 
+        public Person(string firstName, string lastName, Address address, Vehicle car)
+            : this(firstName, lastName, -1, address, car)
+        {
+        }
+
         public Person(string firstName, string lastName, int age)
             : this(firstName, lastName, age, null, null)
         {
