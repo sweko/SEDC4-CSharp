@@ -32,6 +32,20 @@ namespace ClassesExample
             {
                 return firstName + " " + lastName;
             }
+            set
+            {
+                var indexOfSpace = value.IndexOf(" ");
+                if (indexOfSpace > -1)
+                {
+                    this.firstName = value.Substring(0, indexOfSpace);
+                    this.lastName = value.Substring(indexOfSpace + 1);
+                }
+                else
+                {
+                    throw new Exception($@"The value for FullName must be composed of values 
+                        for FirstName and LastName divided with space! Current value: {value}");
+                }
+            }
         }
 
         public int Age {
@@ -50,6 +64,31 @@ namespace ClassesExample
 
         public Address Address { get; set; }
 
+        public string FirstName
+        {
+            get
+            {
+                return firstName;
+            }
+        }
 
+        public string LastName
+        {
+            get
+            {
+                return lastName;
+            }
+        }
+
+        public Vehicle Vehicle { get; set; }
+
+        public override string ToString()
+        {
+            var result = "";
+            result += "Full name: " + FullName;
+            result += " Age: " + Age;
+            result += " Vehicle: " + Vehicle;
+            return result;
+        }
     }
 }
