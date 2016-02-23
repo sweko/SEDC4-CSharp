@@ -34,7 +34,8 @@ namespace ClassesExample
             }
         }
 
-        public int Age {
+        public int Age
+        {
             get
             {
                 return age;
