@@ -18,30 +18,6 @@ namespace WinClient
 
         public MainForm()
         {
-            //var apocalypseNow = new Movie();
-            //apocalypseNow.Title = "Apocalypse Now";
-            //apocalypseNow.Year = 1979;
-            //apocalypseNow.Duration = new TimeSpan(3, 22, 0);
-            //apocalypseNow.Genres = new List<Genre>();
-            //apocalypseNow.Genres.Add(Genre.War);
-            //apocalypseNow.Genres.Add(Genre.Drama);
-            //apocalypseNow.Director = new Person();
-            //apocalypseNow.Director.FirstName = "Francis";
-            //apocalypseNow.Director.LastName = "Ford Coppola";
-            //apocalypseNow.Cast = new List<Person>();
-            //apocalypseNow.Cast.Add(new Person());
-            //apocalypseNow.Cast[0].FirstName = "Martin";
-            //apocalypseNow.Cast[0].LastName = "Sheen";
-            //apocalypseNow.Cast.Add(new Person());
-            //apocalypseNow.Cast[1].FirstName = "Robert";
-            //apocalypseNow.Cast[1].LastName = "Duval";
-            //apocalypseNow.Cast.Add(new Person());
-            //apocalypseNow.Cast[2].FirstName = "Dennis";
-            //apocalypseNow.Cast[2].LastName = "Hopper";
-            //apocalypseNow.Cast.Add(new Person());
-            //apocalypseNow.Cast[3].FirstName = "Marlon";
-            //apocalypseNow.Cast[3].LastName = "Brando";
-
             var apocalypseNow = new Movie ("Apocalypse Now", 1979)
             {
                 Duration = new TimeSpan(3, 22, 0),
@@ -78,6 +54,13 @@ namespace WinClient
         private void MainForm_Load(object sender, EventArgs e)
         {
             lstMovies.DataSource = movies;
+        }
+
+        private void lstMovies_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var movie = (Movie)lstMovies.SelectedItem;
+            lblTitle.Text = movie.Title;
+            lblYear.Text = movie.Year.ToString();
         }
     }
 }
