@@ -42,7 +42,12 @@
             this.lblGenresLabel = new System.Windows.Forms.Label();
             this.lblCastLabel = new System.Windows.Forms.Label();
             this.lblCast = new System.Windows.Forms.Label();
+            this.mainMenu = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.initToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grpMovie.SuspendLayout();
+            this.mainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // lstMovies
@@ -204,6 +209,39 @@
             this.lblCast.TabIndex = 11;
             this.lblCast.Text = "dummy text";
             // 
+            // mainMenu
+            // 
+            this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.mainMenu.Location = new System.Drawing.Point(0, 0);
+            this.mainMenu.Name = "mainMenu";
+            this.mainMenu.Size = new System.Drawing.Size(865, 24);
+            this.mainMenu.TabIndex = 2;
+            this.mainMenu.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addToolStripMenuItem,
+            this.initToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // addToolStripMenuItem
+            // 
+            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addToolStripMenuItem.Text = "Add";
+            this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
+            // 
+            // initToolStripMenuItem
+            // 
+            this.initToolStripMenuItem.Name = "initToolStripMenuItem";
+            this.initToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.initToolStripMenuItem.Text = "Init";
+            this.initToolStripMenuItem.Click += new System.EventHandler(this.initToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 23F);
@@ -211,6 +249,7 @@
             this.ClientSize = new System.Drawing.Size(865, 449);
             this.Controls.Add(this.grpMovie);
             this.Controls.Add(this.lstMovies);
+            this.Controls.Add(this.mainMenu);
             this.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
             this.Name = "MainForm";
@@ -218,7 +257,10 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.grpMovie.ResumeLayout(false);
             this.grpMovie.PerformLayout();
+            this.mainMenu.ResumeLayout(false);
+            this.mainMenu.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -238,6 +280,10 @@
         private System.Windows.Forms.Label lblGenresLabel;
         private System.Windows.Forms.Label lblCast;
         private System.Windows.Forms.Label lblCastLabel;
+        private System.Windows.Forms.MenuStrip mainMenu;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem initToolStripMenuItem;
     }
 }
 

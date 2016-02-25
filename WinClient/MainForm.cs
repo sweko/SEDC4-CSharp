@@ -18,6 +18,27 @@ namespace WinClient
 
         public MainForm()
         {
+            InitializeComponent();
+        }
+
+        //Scenario 1
+        //public void AddMovie(Movie movie)
+        //{
+        //    lstMovies.DataSource = null;
+        //    movies.Add(movie);
+        //    lstMovies.DataSource = movies;
+        //}
+
+        //scenario 2
+        private void AddMovie(Movie movie)
+        {
+            lstMovies.DataSource = null;
+            movies.Add(movie);
+            lstMovies.DataSource = movies;
+        }
+
+        private void InitMovies()
+        {
             var apocalypseNow = new Movie("Apocalypse Now", 1979)
             {
                 Duration = new TimeSpan(3, 22, 0),
@@ -118,8 +139,6 @@ namespace WinClient
             movies.Add(shawshank);
             movies.Add(keyserSose);
             movies.Add(nbk);
-
-            InitializeComponent();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -129,6 +148,9 @@ namespace WinClient
 
         private void lstMovies_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (lstMovies.SelectedItem == null)
+                return;
+
             var movie = (Movie)lstMovies.SelectedItem;
             lblTitle.Text = movie.Title;
             lblYear.Text = movie.Year.ToString();
@@ -151,6 +173,24 @@ namespace WinClient
         private string GetMovieGenreString(List<Genre> genres)
         {
             return string.Join(", ", genres);
+        }
+
+        private void addToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var addMovieForm = new AddMovieForm();
+            var dialogResult = addMovieForm.ShowDialog();
+
+            if (dialogResult == DialogResult.OK)
+            {
+                AddMovie(addMovieForm.Movie);
+            }
+        }
+
+        private void initToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lstMovies.DataSource = null;
+            InitMovies();
+            lstMovies.DataSource = movies;
         }
     }
 }
