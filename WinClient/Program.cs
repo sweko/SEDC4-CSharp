@@ -17,8 +17,9 @@ namespace WinClient
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            Application.Run(new MainForm(new MovieManager()));
+            var personManager = new PersonManager();
+            var movieManager = new MovieManager(personManager);
+            Application.Run(new MainForm(movieManager, personManager));
         }
     }
 }

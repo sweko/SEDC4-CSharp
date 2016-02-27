@@ -9,20 +9,28 @@ namespace MovieManagement
 {
     public class MovieManager
     {
+        private PersonManager personManager;
+
+        public MovieManager(PersonManager personManager)
+        {
+            this.personManager = personManager;
+        }
+
         private List<Movie> movies = new List<Movie>();
 
         private List<Movie> GetDefaultMovies()
         {
+            personManager.Reset();
             var apocalypseNow = new Movie("Apocalypse Now", 1979)
             {
                 Duration = new TimeSpan(3, 22, 0),
                 Genres = new List<Genre> { Genre.War, Genre.Drama },
-                Director = new Person { FirstName = "Francis", LastName = "Ford Coppola" },
+                Director = personManager.GetPersonById(1),
                 Cast = new List<Person>() {
-                    new Person {FirstName = "Martin", LastName = "Sheen" },
-                    new Person {FirstName = "Robert", LastName = "Duval"},
-                    new Person {FirstName = "Dennis", LastName = "Hopper"},
-                    new Person { FirstName = "Marlon", LastName = "Brando"}
+                    personManager.GetPersonById(2),
+                    personManager.GetPersonById(3),
+                    personManager.GetPersonById(4),
+                    personManager.GetPersonById(5),
                 },
             };
 
@@ -117,6 +125,11 @@ namespace MovieManagement
             };
 
             return movies;
+        }
+
+        public void DeleteMovie(Movie movie)
+        {
+            movies.Remove(movie);
         }
 
         public List<Movie> GetMovies()

@@ -17,12 +17,14 @@ namespace WinClient
         //private List<Movie> movies = new List<Movie>();
 
         //scenario 3
-        MovieManager manager;
+        MovieManager movieManager;
+        PersonManager personManager;
 
-        public MainForm(MovieManager manager)
+        public MainForm(MovieManager movieManager, PersonManager personManager)
         {
             //scenario 3
-            this.manager = manager;
+            this.movieManager = movieManager;
+            this.personManager = personManager;
 
             InitializeComponent();
         }
@@ -64,6 +66,8 @@ namespace WinClient
 
         private string GetMovieCastString(List<Person> cast)
         {
+            if (cast == null)
+                return string.Empty;
             string result = string.Empty;
             foreach (var actor in cast)
             {
@@ -74,12 +78,14 @@ namespace WinClient
 
         private string GetMovieGenreString(List<Genre> genres)
         {
+            if (genres == null)
+                return string.Empty;
             return string.Join(", ", genres);
         }
 
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var addMovieForm = new AddMovieForm(manager);
+            var addMovieForm = new AddMovieForm(movieManager);
             var dialogResult = addMovieForm.ShowDialog();
             if (dialogResult == DialogResult.OK)
             {
@@ -90,7 +96,7 @@ namespace WinClient
         private void initToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //scenario 3
-            manager.Reset();
+            movieManager.Reset();
 
             ReloadMovies();
         }
@@ -99,7 +105,15 @@ namespace WinClient
         {
             lstMovies.DataSource = null;
             //scenario 3
-            lstMovies.DataSource = manager.GetMovies();
+            lstMovies.DataSource = movieManager.GetMovies();
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            var currentMovie = (Movie)lstMovies.SelectedItem;
+            movieManager.DeleteMovie(currentMovie);
+            ReloadMovies();
+        }
+
     }
 }
