@@ -30,7 +30,9 @@ namespace WinClient
 
         public AddMovieForm(MovieManager manager)
         {
+            //scenario 3
             this.manager = manager;
+
             InitializeComponent();
         }
 
@@ -56,6 +58,7 @@ namespace WinClient
             //scenario 2
             //Movie = movie;
 
+            //scenario 3
             manager.AddMovie(movie);
             Close();
         }

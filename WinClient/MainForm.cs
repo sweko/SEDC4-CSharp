@@ -15,13 +15,15 @@ namespace WinClient
     public partial class MainForm : Form
     {
         //private List<Movie> movies = new List<Movie>();
+
+        //scenario 3
         MovieManager manager;
 
-
-        public MainForm()
+        public MainForm(MovieManager manager)
         {
-            manager = new MovieManager();
-            manager.Reset();
+            //scenario 3
+            this.manager = manager;
+
             InitializeComponent();
         }
 
@@ -87,13 +89,16 @@ namespace WinClient
 
         private void initToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //scenario 3
             manager.Reset();
+
             ReloadMovies();
         }
 
         private void ReloadMovies()
         {
             lstMovies.DataSource = null;
+            //scenario 3
             lstMovies.DataSource = manager.GetMovies();
         }
     }

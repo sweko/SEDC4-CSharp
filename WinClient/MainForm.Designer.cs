@@ -30,22 +30,23 @@
         {
             this.lstMovies = new System.Windows.Forms.ListBox();
             this.grpMovie = new System.Windows.Forms.GroupBox();
+            this.lblCast = new System.Windows.Forms.Label();
+            this.lblCastLabel = new System.Windows.Forms.Label();
+            this.lblGenres = new System.Windows.Forms.Label();
+            this.lblGenresLabel = new System.Windows.Forms.Label();
+            this.lblDuration = new System.Windows.Forms.Label();
+            this.lblDurationLabel = new System.Windows.Forms.Label();
+            this.lblDirector = new System.Windows.Forms.Label();
+            this.lblDirectorLabel = new System.Windows.Forms.Label();
             this.lblYear = new System.Windows.Forms.Label();
             this.lblYearLabel = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblTitleLabel = new System.Windows.Forms.Label();
-            this.lblDirector = new System.Windows.Forms.Label();
-            this.lblDirectorLabel = new System.Windows.Forms.Label();
-            this.lblDuration = new System.Windows.Forms.Label();
-            this.lblDurationLabel = new System.Windows.Forms.Label();
-            this.lblGenres = new System.Windows.Forms.Label();
-            this.lblGenresLabel = new System.Windows.Forms.Label();
-            this.lblCastLabel = new System.Windows.Forms.Label();
-            this.lblCast = new System.Windows.Forms.Label();
             this.mainMenu = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.initToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.grpMovie.SuspendLayout();
             this.mainMenu.SuspendLayout();
             this.SuspendLayout();
@@ -68,6 +69,7 @@
             this.grpMovie.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpMovie.Controls.Add(this.btnDelete);
             this.grpMovie.Controls.Add(this.lblCast);
             this.grpMovie.Controls.Add(this.lblCastLabel);
             this.grpMovie.Controls.Add(this.lblGenres);
@@ -88,6 +90,86 @@
             this.grpMovie.TabIndex = 1;
             this.grpMovie.TabStop = false;
             this.grpMovie.Text = "Movie Details";
+            // 
+            // lblCast
+            // 
+            this.lblCast.AutoSize = true;
+            this.lblCast.Location = new System.Drawing.Point(119, 173);
+            this.lblCast.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.lblCast.Name = "lblCast";
+            this.lblCast.Size = new System.Drawing.Size(140, 23);
+            this.lblCast.TabIndex = 11;
+            this.lblCast.Text = "dummy text";
+            // 
+            // lblCastLabel
+            // 
+            this.lblCastLabel.AutoSize = true;
+            this.lblCastLabel.Location = new System.Drawing.Point(15, 150);
+            this.lblCastLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.lblCastLabel.Name = "lblCastLabel";
+            this.lblCastLabel.Size = new System.Drawing.Size(72, 23);
+            this.lblCastLabel.TabIndex = 10;
+            this.lblCastLabel.Text = "Cast: ";
+            // 
+            // lblGenres
+            // 
+            this.lblGenres.AutoSize = true;
+            this.lblGenres.Location = new System.Drawing.Point(119, 127);
+            this.lblGenres.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.lblGenres.Name = "lblGenres";
+            this.lblGenres.Size = new System.Drawing.Size(140, 23);
+            this.lblGenres.TabIndex = 9;
+            this.lblGenres.Text = "dummy text";
+            // 
+            // lblGenresLabel
+            // 
+            this.lblGenresLabel.AutoSize = true;
+            this.lblGenresLabel.Location = new System.Drawing.Point(15, 127);
+            this.lblGenresLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.lblGenresLabel.Name = "lblGenresLabel";
+            this.lblGenresLabel.Size = new System.Drawing.Size(100, 23);
+            this.lblGenresLabel.TabIndex = 8;
+            this.lblGenresLabel.Text = "Genres: ";
+            // 
+            // lblDuration
+            // 
+            this.lblDuration.AutoSize = true;
+            this.lblDuration.Location = new System.Drawing.Point(119, 81);
+            this.lblDuration.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.lblDuration.Name = "lblDuration";
+            this.lblDuration.Size = new System.Drawing.Size(140, 23);
+            this.lblDuration.TabIndex = 7;
+            this.lblDuration.Text = "dummy text";
+            // 
+            // lblDurationLabel
+            // 
+            this.lblDurationLabel.AutoSize = true;
+            this.lblDurationLabel.Location = new System.Drawing.Point(15, 81);
+            this.lblDurationLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.lblDurationLabel.Name = "lblDurationLabel";
+            this.lblDurationLabel.Size = new System.Drawing.Size(120, 23);
+            this.lblDurationLabel.TabIndex = 6;
+            this.lblDurationLabel.Text = "Duration: ";
+            // 
+            // lblDirector
+            // 
+            this.lblDirector.AutoSize = true;
+            this.lblDirector.Location = new System.Drawing.Point(119, 104);
+            this.lblDirector.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.lblDirector.Name = "lblDirector";
+            this.lblDirector.Size = new System.Drawing.Size(140, 23);
+            this.lblDirector.TabIndex = 5;
+            this.lblDirector.Text = "dummy text";
+            // 
+            // lblDirectorLabel
+            // 
+            this.lblDirectorLabel.AutoSize = true;
+            this.lblDirectorLabel.Location = new System.Drawing.Point(15, 104);
+            this.lblDirectorLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.lblDirectorLabel.Name = "lblDirectorLabel";
+            this.lblDirectorLabel.Size = new System.Drawing.Size(112, 23);
+            this.lblDirectorLabel.TabIndex = 4;
+            this.lblDirectorLabel.Text = "Director: ";
             // 
             // lblYear
             // 
@@ -129,86 +211,6 @@
             this.lblTitleLabel.TabIndex = 0;
             this.lblTitleLabel.Text = "Title: ";
             // 
-            // lblDirector
-            // 
-            this.lblDirector.AutoSize = true;
-            this.lblDirector.Location = new System.Drawing.Point(119, 104);
-            this.lblDirector.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.lblDirector.Name = "lblDirector";
-            this.lblDirector.Size = new System.Drawing.Size(140, 23);
-            this.lblDirector.TabIndex = 5;
-            this.lblDirector.Text = "dummy text";
-            // 
-            // lblDirectorLabel
-            // 
-            this.lblDirectorLabel.AutoSize = true;
-            this.lblDirectorLabel.Location = new System.Drawing.Point(15, 104);
-            this.lblDirectorLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.lblDirectorLabel.Name = "lblDirectorLabel";
-            this.lblDirectorLabel.Size = new System.Drawing.Size(112, 23);
-            this.lblDirectorLabel.TabIndex = 4;
-            this.lblDirectorLabel.Text = "Director: ";
-            // 
-            // lblDuration
-            // 
-            this.lblDuration.AutoSize = true;
-            this.lblDuration.Location = new System.Drawing.Point(119, 81);
-            this.lblDuration.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.lblDuration.Name = "lblDuration";
-            this.lblDuration.Size = new System.Drawing.Size(140, 23);
-            this.lblDuration.TabIndex = 7;
-            this.lblDuration.Text = "dummy text";
-            // 
-            // lblDurationLabel
-            // 
-            this.lblDurationLabel.AutoSize = true;
-            this.lblDurationLabel.Location = new System.Drawing.Point(15, 81);
-            this.lblDurationLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.lblDurationLabel.Name = "lblDurationLabel";
-            this.lblDurationLabel.Size = new System.Drawing.Size(120, 23);
-            this.lblDurationLabel.TabIndex = 6;
-            this.lblDurationLabel.Text = "Duration: ";
-            // 
-            // lblGenres
-            // 
-            this.lblGenres.AutoSize = true;
-            this.lblGenres.Location = new System.Drawing.Point(119, 127);
-            this.lblGenres.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.lblGenres.Name = "lblGenres";
-            this.lblGenres.Size = new System.Drawing.Size(140, 23);
-            this.lblGenres.TabIndex = 9;
-            this.lblGenres.Text = "dummy text";
-            // 
-            // lblGenresLabel
-            // 
-            this.lblGenresLabel.AutoSize = true;
-            this.lblGenresLabel.Location = new System.Drawing.Point(15, 127);
-            this.lblGenresLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.lblGenresLabel.Name = "lblGenresLabel";
-            this.lblGenresLabel.Size = new System.Drawing.Size(100, 23);
-            this.lblGenresLabel.TabIndex = 8;
-            this.lblGenresLabel.Text = "Genres: ";
-            // 
-            // lblCastLabel
-            // 
-            this.lblCastLabel.AutoSize = true;
-            this.lblCastLabel.Location = new System.Drawing.Point(15, 150);
-            this.lblCastLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.lblCastLabel.Name = "lblCastLabel";
-            this.lblCastLabel.Size = new System.Drawing.Size(72, 23);
-            this.lblCastLabel.TabIndex = 10;
-            this.lblCastLabel.Text = "Cast: ";
-            // 
-            // lblCast
-            // 
-            this.lblCast.AutoSize = true;
-            this.lblCast.Location = new System.Drawing.Point(119, 173);
-            this.lblCast.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.lblCast.Name = "lblCast";
-            this.lblCast.Size = new System.Drawing.Size(140, 23);
-            this.lblCast.TabIndex = 11;
-            this.lblCast.Text = "dummy text";
-            // 
             // mainMenu
             // 
             this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -231,16 +233,26 @@
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
             this.addToolStripMenuItem.Text = "Add";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
             // initToolStripMenuItem
             // 
             this.initToolStripMenuItem.Name = "initToolStripMenuItem";
-            this.initToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.initToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
             this.initToolStripMenuItem.Text = "Init";
             this.initToolStripMenuItem.Click += new System.EventHandler(this.initToolStripMenuItem_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.Location = new System.Drawing.Point(300, 342);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(165, 57);
+            this.btnDelete.TabIndex = 12;
+            this.btnDelete.Text = "Delete Movie";
+            this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -284,6 +296,7 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem initToolStripMenuItem;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
 
