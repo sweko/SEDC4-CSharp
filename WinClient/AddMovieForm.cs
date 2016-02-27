@@ -1,4 +1,5 @@
 ﻿using MovieClasses;
+using MovieManagement;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,10 +24,13 @@ namespace WinClient
         //}
 
         //scenario 2
-        public Movie Movie { get; set; }
+        //public Movie Movie { get; set; }
 
-        public AddMovieForm()
+        private MovieManager manager;
+
+        public AddMovieForm(MovieManager manager)
         {
+            this.manager = manager;
             InitializeComponent();
         }
 
@@ -50,8 +54,9 @@ namespace WinClient
             //caller.AddMovie(movie);
 
             //scenario 2
-            Movie = movie;
+            //Movie = movie;
 
+            manager.AddMovie(movie);
             Close();
         }
     }
