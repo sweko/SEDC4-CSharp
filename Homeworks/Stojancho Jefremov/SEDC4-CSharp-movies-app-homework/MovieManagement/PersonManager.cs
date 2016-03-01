@@ -13,6 +13,11 @@ namespace MovieManagement
 
         private static int lastPersonID = 30;
 
+        public PersonManager()
+        {
+            Reset();
+        }
+
         public void Reset()
         {
             persons = GetDefaultPersons();

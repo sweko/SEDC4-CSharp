@@ -85,7 +85,7 @@ namespace WinClient
 
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var addMovieForm = new AddMovieForm(movieManager);
+            var addMovieForm = new AddMovieForm(movieManager, personManager);
             var dialogResult = addMovieForm.ShowDialog();
             if (dialogResult == DialogResult.OK)
             {
@@ -117,7 +117,8 @@ namespace WinClient
 
         private void addPersonToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            var addPersonForm = new AddPersonForm(personManager);
+            var dialogResult = addPersonForm.ShowDialog();
         }
     }
 }

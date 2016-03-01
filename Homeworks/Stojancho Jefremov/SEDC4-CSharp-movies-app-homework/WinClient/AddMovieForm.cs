@@ -29,14 +29,13 @@ namespace WinClient
         private MovieManager movieManager;
         private PersonManager personManager;
 
-        public AddMovieForm(MovieManager manager)
+        public AddMovieForm(MovieManager manager, PersonManager personManager)
         {
             //scenario 3
             this.movieManager = manager;
+            this.personManager = personManager;
 
-            //not-good-but-working
-            personManager = new PersonManager();
-            personManager.Reset();
+            //personManager.Reset();
 
             InitializeComponent();
         }
