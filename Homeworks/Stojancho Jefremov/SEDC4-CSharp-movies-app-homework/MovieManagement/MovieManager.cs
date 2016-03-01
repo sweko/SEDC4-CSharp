@@ -38,13 +38,13 @@ namespace MovieManagement
             {
                 Duration = new TimeSpan(2, 33, 0),
                 Genres = new List<Genre> { Genre.Crime },
-                Director = new Person { FirstName = "Quentin", LastName = "Tarantino" },
+                Director = personManager.GetPersonById(9),
                 Cast = new List<Person>
                 {
-                    new Person {FirstName = "John", LastName = "Travolta" },
-                    new Person {FirstName = "Samuel", LastName = "Jackson" },
-                    new Person {FirstName = "Bruce", LastName = "Willis" },
-                    new Person {FirstName = "Quentin", LastName="Tarantino"},
+                    personManager.GetPersonById(6),
+                    personManager.GetPersonById(7),
+                    personManager.GetPersonById(8),
+                    personManager.GetPersonById(9),
                 }
             };
 
@@ -52,12 +52,12 @@ namespace MovieManagement
             {
                 Duration = new TimeSpan(2, 19, 0),
                 Genres = new List<Genre> { Genre.Drama },
-                Director = new Person { FirstName = "David", LastName = "Fincher" },
+                Director = personManager.GetPersonById(13),
                 Cast = new List<Person>
                 {
-                    new Person {FirstName = "Brad", LastName = "Pitt" },
-                    new Person {FirstName = "Edward", LastName = "Norton" },
-                    new Person {FirstName = "Helena", LastName = "Bonham Carter" },
+                    personManager.GetPersonById(10),
+                    personManager.GetPersonById(11),
+                    personManager.GetPersonById(12)
                 }
             };
 
@@ -65,12 +65,12 @@ namespace MovieManagement
             {
                 Duration = new TimeSpan(1, 55, 0),
                 Genres = new List<Genre> { Genre.War, Genre.Drama, Genre.Comedy },
-                Director = new Person { FirstName = "Srdjan", LastName = "Dragojevic" },
+                Director = personManager.GetPersonById(27),
                 Cast = new List<Person>
                 {
-                    new Person {FirstName = "Dragan", LastName = "Bjelogrlic" },
-                    new Person {FirstName = "Nikola", LastName = "Kojo" },
-                    new Person {FirstName = "Zoran", LastName = "Cvijanovic" },
+                    personManager.GetPersonById(14),
+                    personManager.GetPersonById(15),
+                    personManager.GetPersonById(16)
                 }
             };
 
@@ -78,12 +78,12 @@ namespace MovieManagement
             {
                 Duration = new TimeSpan(2, 22, 0),
                 Genres = new List<Genre> { Genre.Drama, Genre.Crime },
-                Director = new Person { FirstName = "Frank", LastName = "Darabond" },
+                Director = personManager.GetPersonById(28),
                 Cast = new List<Person>
                 {
-                    new Person {FirstName = "Tim", LastName = "Robbins" },
-                    new Person {FirstName = "Morgan", LastName = "Freemen" },
-                    new Person {FirstName = "Bob", LastName = "Gunton" },
+                    personManager.GetPersonById(17),
+                    personManager.GetPersonById(18),
+                    personManager.GetPersonById(19)
                 }
             };
 
@@ -91,12 +91,12 @@ namespace MovieManagement
             {
                 Duration = new TimeSpan(1, 46, 0),
                 Genres = new List<Genre> { Genre.Drama, Genre.Crime },
-                Director = new Person { FirstName = "Bryan", LastName = "Singer" },
+                Director = personManager.GetPersonById(29),
                 Cast = new List<Person>
                 {
-                    new Person {FirstName = "Kevin", LastName = "Spacey" },
-                    new Person {FirstName = "Chazz", LastName = "Palminteri" },
-                    new Person {FirstName = "Gabriel", LastName = "Byrne" },
+                    personManager.GetPersonById(20),
+                    personManager.GetPersonById(21),
+                    personManager.GetPersonById(22)
                 }
             };
 
@@ -104,13 +104,13 @@ namespace MovieManagement
             {
                 Duration = new TimeSpan(1, 58, 0),
                 Genres = new List<Genre> { Genre.Drama, Genre.Crime },
-                Director = new Person { FirstName = "Oliver", LastName = "Stone" },
+                Director = personManager.GetPersonById(30),
                 Cast = new List<Person>
                 {
-                    new Person {FirstName = "Woody", LastName = "Harrelson" },
-                    new Person {FirstName = "Juliette", LastName = "Lewis" },
-                    new Person {FirstName = "Tom", LastName = "Sizemore" },
-                    new Person {FirstName = "Robert", LastName = "Downey Jr" },
+                    personManager.GetPersonById(23),
+                    personManager.GetPersonById(24),
+                    personManager.GetPersonById(25),
+                    personManager.GetPersonById(26),
                 }
             };
 

@@ -115,5 +115,9 @@ namespace WinClient
             ReloadMovies();
         }
 
+        private void addPersonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

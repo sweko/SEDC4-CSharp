@@ -30,6 +30,7 @@
         {
             this.lstMovies = new System.Windows.Forms.ListBox();
             this.grpMovie = new System.Windows.Forms.GroupBox();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.lblCast = new System.Windows.Forms.Label();
             this.lblCastLabel = new System.Windows.Forms.Label();
             this.lblGenres = new System.Windows.Forms.Label();
@@ -45,9 +46,8 @@
             this.mainMenu = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.initToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.addPersonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.initToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grpMovie.SuspendLayout();
             this.mainMenu.SuspendLayout();
             this.SuspendLayout();
@@ -91,6 +91,17 @@
             this.grpMovie.TabIndex = 1;
             this.grpMovie.TabStop = false;
             this.grpMovie.Text = "Movie Details";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.Location = new System.Drawing.Point(300, 342);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(165, 57);
+            this.btnDelete.TabIndex = 12;
+            this.btnDelete.Text = "Delete Movie";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // lblCast
             // 
@@ -239,29 +250,19 @@
             this.addToolStripMenuItem.Text = "Add Movie";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
-            // initToolStripMenuItem
-            // 
-            this.initToolStripMenuItem.Name = "initToolStripMenuItem";
-            this.initToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
-            this.initToolStripMenuItem.Text = "Init";
-            this.initToolStripMenuItem.Click += new System.EventHandler(this.initToolStripMenuItem_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.Location = new System.Drawing.Point(300, 342);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(165, 57);
-            this.btnDelete.TabIndex = 12;
-            this.btnDelete.Text = "Delete Movie";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
             // addPersonToolStripMenuItem
             // 
             this.addPersonToolStripMenuItem.Name = "addPersonToolStripMenuItem";
             this.addPersonToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.addPersonToolStripMenuItem.Text = "Add Person";
+            this.addPersonToolStripMenuItem.Click += new System.EventHandler(this.addPersonToolStripMenuItem_Click);
+            // 
+            // initToolStripMenuItem
+            // 
+            this.initToolStripMenuItem.Name = "initToolStripMenuItem";
+            this.initToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.initToolStripMenuItem.Text = "Init";
+            this.initToolStripMenuItem.Click += new System.EventHandler(this.initToolStripMenuItem_Click);
             // 
             // MainForm
             // 
