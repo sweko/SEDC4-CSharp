@@ -12,5 +12,7 @@ namespace SEDC
         public Proffesor Lecturer { get; set; }
         public Assistant Assistant { get; set; }
         public List<Student> Students { get; set; }
+
+        public Staff Coordinator { get; set; }
     }
 }

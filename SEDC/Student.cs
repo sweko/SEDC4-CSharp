@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace SEDC
 {
-    public class Student
+    public class Student: Person
     {
-        public string EMBG { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-
         public string PriorExperience { get; set; }
 
     }
