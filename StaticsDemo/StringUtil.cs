@@ -17,5 +17,18 @@ namespace StaticsDemo
             }
             return true;
         }
+
+        public static string GetLongest(string first, string second)
+        {
+            if (first.Length > second.Length)
+                return first;
+            if (first.Length < second.Length)
+                return second;
+
+            if (string.Compare(first, second) == -1)
+                return first;
+
+            return second;
+        }
     }
 }
