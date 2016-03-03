@@ -24,7 +24,7 @@ namespace Homework_Animals
 
         public override string makeSound()
         {
-            return ("Ring-ding-ding-ding-dingering");
+            return ("Ring-ding-ding-ding-dingering!");
         }
 
     }
