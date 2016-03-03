@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FizzBuzz", "FizzBuzz\FizzBu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InheritanceDemo", "InheritanceDemo\InheritanceDemo.csproj", "{22B4DF06-87FB-4EDD-BBFD-81F0E5D61560}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticsDemo", "StaticsDemo\StaticsDemo.csproj", "{9D18217B-5A7F-47BD-84A1-25383E587601}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,6 +107,10 @@ Global
 		{22B4DF06-87FB-4EDD-BBFD-81F0E5D61560}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22B4DF06-87FB-4EDD-BBFD-81F0E5D61560}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22B4DF06-87FB-4EDD-BBFD-81F0E5D61560}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D18217B-5A7F-47BD-84A1-25383E587601}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D18217B-5A7F-47BD-84A1-25383E587601}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D18217B-5A7F-47BD-84A1-25383E587601}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D18217B-5A7F-47BD-84A1-25383E587601}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -124,5 +130,6 @@ Global
 		{7C43A3A7-BAC4-484F-B94A-A6904F6B8681} = {65278FF7-1248-44C7-A8C8-64F841C64AD1}
 		{DA3D3FBB-BB5E-410B-9A1B-62BA26D703A1} = {65278FF7-1248-44C7-A8C8-64F841C64AD1}
 		{22B4DF06-87FB-4EDD-BBFD-81F0E5D61560} = {24A94C59-D7E4-43C9-88DA-9581C17C3607}
+		{9D18217B-5A7F-47BD-84A1-25383E587601} = {24A94C59-D7E4-43C9-88DA-9581C17C3607}
 	EndGlobalSection
 EndGlobal
