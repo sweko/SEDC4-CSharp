@@ -10,6 +10,11 @@ namespace SEDC
     {
         static void Main(string[] args)
         {
+            var csharp = new Subject
+            {
+                Name = "Visual Studio with C#",
+                //...
+            };
         }
     }
 }
