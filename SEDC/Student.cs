@@ -11,5 +11,8 @@ namespace SEDC
         public string EMBG { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+
+        public string PriorExperience { get; set; }
+
     }
 }
