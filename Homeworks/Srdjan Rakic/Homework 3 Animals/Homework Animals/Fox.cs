@@ -8,11 +8,7 @@ namespace Homework_Animals
 {
     class Fox : Animal
     {
-        public override string Name { get; set; }
-        public override string Specie { get; set; }
-        public override string Color { get; set; }
-        public override string Age { get; set; }
-
+        
         public Fox(string name, string specie, string color, string age)
         {
             Name = name;
@@ -21,10 +17,9 @@ namespace Homework_Animals
             Age = age;
         }
 
-
-        public override string makeSound()
+        public override string MakeSound()
         {
-            return ("Ring-ding-ding-ding-dingering!");
+           return "Fox says : Ring - ding - ding - ding - dingering!";
         }
 
     }
