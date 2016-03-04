@@ -14,5 +14,17 @@ namespace MovieClasses
         public List<Genre> Genres { get; set; }
         public Person Director { get; set; }
         public List<Person> Cast { get; set; }
+        public string ImdbId { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Title} ({Year})";
+        }
+
+        public Movie(string title, int year)
+        {
+            Title = title;
+            Year = year;
+        }
     }
 }
