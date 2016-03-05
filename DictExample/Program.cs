@@ -17,7 +17,15 @@ namespace DictExample
                 Gender = Gender.Male
             };
 
+            Person invalid = new Person()
+            {
+                FirstName = "Invalid",
+                LastName = "Invalidson",
+                Gender = (Gender)(-1)
+            };
+
             Console.WriteLine(weko.GetGenderDescription());
+            Console.WriteLine(invalid.GetGenderDescription());
             //"{fullname} is male and has testosterone";
             //"{fullname} is female and has estrogene";
             //"{fullname} has not declared itself as male or female";

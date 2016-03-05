@@ -19,7 +19,19 @@ namespace DictExample
 
         public string GetGenderDescription()
         {
-            return string.Empty;
+            switch (Gender)
+            {
+                case Gender.Male:
+                    return $"{FirstName} {LastName} is male and has testosterone";
+                case Gender.Female:
+                    return $"{FirstName} {LastName} is female and has estrogene";
+                case Gender.Other:
+                    return $"{FirstName} {LastName} has not declared itself as male or female";
+                case Gender.Undefined:
+                    return $"We have no idea what {FirstName} {LastName}'s gender is";
+                default:
+                    throw new Exception($"Gender value of {Gender} is not a valid gender");
+            }
         }
     }
 }
