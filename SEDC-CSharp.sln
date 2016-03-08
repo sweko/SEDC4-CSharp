@@ -49,6 +49,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatchExample", "CatchExampl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnglishToMacedonian", "EnglishToMacedonian\EnglishToMacedonian.csproj", "{20223093-3D87-4995-831D-42E4B454E4C9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DictionaryBuilder", "DictionaryBuilder\DictionaryBuilder.csproj", "{89023FBF-F873-4F03-8D63-6BCC2D6761F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -135,6 +137,10 @@ Global
 		{20223093-3D87-4995-831D-42E4B454E4C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20223093-3D87-4995-831D-42E4B454E4C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20223093-3D87-4995-831D-42E4B454E4C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89023FBF-F873-4F03-8D63-6BCC2D6761F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89023FBF-F873-4F03-8D63-6BCC2D6761F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89023FBF-F873-4F03-8D63-6BCC2D6761F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89023FBF-F873-4F03-8D63-6BCC2D6761F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -159,5 +165,6 @@ Global
 		{3B0B6505-8D67-4274-9963-42C69C1E250D} = {65278FF7-1248-44C7-A8C8-64F841C64AD1}
 		{6E6C4055-CDBD-4785-B3F3-14BB03CEDDA1} = {24A94C59-D7E4-43C9-88DA-9581C17C3607}
 		{20223093-3D87-4995-831D-42E4B454E4C9} = {65278FF7-1248-44C7-A8C8-64F841C64AD1}
+		{89023FBF-F873-4F03-8D63-6BCC2D6761F5} = {65278FF7-1248-44C7-A8C8-64F841C64AD1}
 	EndGlobalSection
 EndGlobal

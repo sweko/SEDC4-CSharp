@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,9 @@ namespace DictionaryBuilder
         {
             //1. Read Data
             //1.a. Does previous data exist?
+            
             //1.a.1 Prev data exist => Load Data
+
             //1.a.1.a Read text from file
             //1.a.1.b deserialize to dictionary
             //1.a.2 Prev data does not exist => empty data
