@@ -14,7 +14,7 @@ namespace NumToWordsAndCalculator
             {
                 Console.Write("Enter number: ");
                 var number = uint.Parse(Console.ReadLine());
-                Console.WriteLine(Converter.ToWords(number));
+                Console.WriteLine(Converter.ToWords(number, Language.Macedonian));
             }
             //Console.ReadLine();
         }
