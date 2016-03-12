@@ -18,19 +18,25 @@ namespace NumToWordsAndCalculator
             }
             if (number == 0)
             {
-                return "zero";
+                return "Zero";
             }
             #endregion
 
-            var result = string.Empty;
+
             //TODO implementation...
-            //result = chunk(number)
-            //    .map(inEnglish)
-            //    .map(appendScale)
-            //    .filter(isTruthy)
-            //    .reverse()
-            //    .join(" ");
-            return result;
+            var result = Chunk(number)
+                .Select(ToEnglish)
+                .Select(AppendScale)
+                .Where(IsNotZero)
+                .Reverse();
+            return string.Join(" ", result)
+                .CapitalizeFirstChar()
+                .Trim();
+        }
+
+        private static string CapitalizeFirstChar(this string input)
+        {
+            return input.First().ToString().ToUpper() + input.Substring(1);
         }
 
         private static IEnumerable<ushort> Chunk(ulong number)
@@ -89,16 +95,42 @@ namespace NumToWordsAndCalculator
                 tens = (ushort)(number / 10);
                 words.Add(TENS[tens - 1]);
                 words.Add(ONE_TO_NINETEEN[ones - 1]);
-                return string.Join(" ", words.Where(w => !w.Equals("zero")));
+                return string.Join(" ", words.Where(IsNotZero));
             }
             
             hundreds = (ushort)(number / 100);
             words.Add(ToEnglish(hundreds));
             words.Add("hundred");
             words.Add(ToEnglish((ushort)(number % 100)));
-            return string.Join(" ", words.Where(w => !w.Equals("zero")));
+            return string.Join(" ", words.Where(IsNotZero));
 
 
+        }
+
+        private static bool IsNotZero(string word) => !word.Equals("zero");
+
+        private static string AppendScale(string chunk, int index)
+        {
+            
+            if (string.IsNullOrEmpty(chunk) || !IsNotZero(chunk))
+            {
+                return "zero";
+            }
+
+            if (index == 0)
+            {
+                return chunk;
+            }
+           
+            var SCALES = new ReadOnlyCollection<string>
+                (
+                    new List<string>
+                    { "thousand", "million", "billion" }
+                );
+            var scale = SCALES[index - 1];
+            return string.Join(" ", chunk, scale);
+            
+            
         }
     }
 }

@@ -10,6 +10,13 @@ namespace NumToWordsAndCalculator
     {
         static void Main(string[] args)
         {
+            while (true)
+            {
+                Console.Write("Enter number: ");
+                var number = uint.Parse(Console.ReadLine());
+                Console.WriteLine(Converter.ToWords(number));
+            }
+            //Console.ReadLine();
         }
     }
 }
