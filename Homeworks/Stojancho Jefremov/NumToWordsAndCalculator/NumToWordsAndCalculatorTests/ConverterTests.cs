@@ -43,9 +43,8 @@ namespace NumToWordsAndCalculator.Tests
             Assert.AreEqual("Илјада сто осумдесет и седум", Converter.ToWords(1187, Language.Macedonian), "1187");
             Assert.AreEqual("Две илјади", Converter.ToWords(2000, Language.Macedonian), "2000");
             Assert.AreEqual("Дваесет и една илјада единаесет", Converter.ToWords(21011, Language.Macedonian), "21011");
-            Assert.AreEqual("One million", Converter.ToWords(1000000, Language.Macedonian), "Million");
-            Assert.AreEqual("Дванаесет милиони триста четериесет и една илјада шестотини седумдесет и осум", Converter.ToWords(12341678, Language.Macedonian), "12341678");
-            Assert.AreEqual("Сто дваесет и осум милијарди триста четериесет и еден милион шестотини седумдесет и девет илјади девестотини и еден", Converter.ToWords(128341679901, Language.Macedonian), "128341679901");
+            Assert.AreEqual("Дванаесет милиони триста четириесет и една илјада шестотини седумдесет и осум", Converter.ToWords(12341678, Language.Macedonian), "12341678");
+            Assert.AreEqual("Сто дваесет и осум милијарди триста четириесет и еден милион шестотини седумдесет и девет илјади деветстотини и еден", Converter.ToWords(128341679901, Language.Macedonian), "128341679901");
         }
     }
 }

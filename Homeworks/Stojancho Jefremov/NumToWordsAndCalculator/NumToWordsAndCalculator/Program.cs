@@ -13,7 +13,7 @@ namespace NumToWordsAndCalculator
             while (true)
             {
                 Console.Write("Enter number: ");
-                var number = uint.Parse(Console.ReadLine());
+                var number = ulong.Parse(Console.ReadLine());
                 Console.WriteLine(Converter.ToWords(number, Language.Macedonian));
             }
             //Console.ReadLine();

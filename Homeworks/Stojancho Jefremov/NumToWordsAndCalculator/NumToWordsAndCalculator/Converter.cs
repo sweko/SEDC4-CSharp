@@ -206,7 +206,7 @@ namespace NumToWordsAndCalculator
 
             if (number == 0)
             {
-                return "нула";
+                return "zero";
             }
 
             if (number < 20)
@@ -228,7 +228,7 @@ namespace NumToWordsAndCalculator
             var tensDigit = (number % 100) / 10;
             if (tensDigit == 0)
             {
-                words.Add(" и ");
+                words.Add("и");
             }
             words.Add(ToMacedonian((ushort)(number % 100)));
             return string.Join(" ", words.Where(IsNotZero));
@@ -280,7 +280,7 @@ namespace NumToWordsAndCalculator
                 }
                 else
                 {
-                    if (chunk.IndexOf("два") == chunk.Length - 4)
+                    if (chunk.Length == 3)
                     {
                         chunk = chunk.Replace("два", "две");
                     }
