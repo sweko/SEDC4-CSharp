@@ -190,6 +190,7 @@
             this.btn0.TabIndex = 12;
             this.btn0.Text = "0";
             this.btn0.UseVisualStyleBackColor = true;
+            this.btn0.Click += new System.EventHandler(this.btn_Click);
             // 
             // txtDisplay
             // 
@@ -226,6 +227,7 @@
             this.Controls.Add(this.btn7);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
