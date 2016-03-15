@@ -11,19 +11,57 @@ namespace LinqRunner
     {
         static void Main(string[] args)
         {
+            /*
             var persons = InitPersons();
             PrintPersons(persons);
 
-            var malePersons = GetMalePersons(persons);
+            var malePersons = GetPersonsFilter(persons, p => p.Gender == Gender.Male);
             PrintPersons(malePersons);
+
+            Console.Write("Enter cutoff age: ");
+            int cutoff = int.Parse(Console.ReadLine());
+
+            var youngPersons = GetPersonsFilter(persons, p => p.Age < cutoff);
+            PrintPersons(youngPersons);
+
+            var firstNameLonger = GetPersonsFilter(persons, p => p.FirstName.Length > p.LastName.Length);
+            PrintPersons(firstNameLonger);
+
+
+            var weko = new Person
+            {
+                FirstName = "Wekoslav",
+                LastName = "Stefanovski",
+                Age = 0x26,
+                Gender = Gender.Male
+            };
+
+            Action<Person> personPrinter = p => Console.WriteLine(p);
+            personPrinter(weko);
+
+            Func<Person, string> fullNameGetter = p => p.FirstName + " " + p.LastName;
+            var wekoFullName = fullNameGetter(weko);
+            Console.WriteLine(wekoFullName);
+            */
         }
 
-        private static IEnumerable<Person> GetMalePersons(IEnumerable<Person> persons)
+        private static void PrintPerson(Person person)
+        {
+            Console.WriteLine(person);
+        }
+
+        private static string GetFullName(Person person)
+        {
+            return person.FirstName + " " + person.LastName;
+        }
+
+
+        private static IEnumerable<Person> GetPersonsFilter(IEnumerable<Person> persons, Func<Person, bool> filter)
         {
             var result = new Stack<Person>();
             foreach (var person in persons)
             {
-                if (person.Gender == Gender.Male)
+                if (filter(person))
                 {
                     result.Push(person);
                 }
@@ -117,5 +155,8 @@ namespace LinqRunner
 
             return persons;
         }
+
+
+
     }
 }
