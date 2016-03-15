@@ -53,18 +53,19 @@ namespace Calculator
 
         private static string ProcessOperator(char input, string output)
         {
-            var lastChar = output[output.length - 1];
-            if (output != '0' && !isContained(lastChar, OPERATORS))
+            var lastChar = output[output.Length - 1];
+            if (output != "0" && !OPERATORS.Contains(lastChar))
             {
-                output += input;
+                return output + input;
             }
-            else if (output == '0' && input == '-')
+
+            if (output == "0" && input == '-')
             {
-                output = input;
+                return input.ToString();
             }
-            else if (isContained(lastChar, OPERATORS) && output.length > 1)
+            if (OPERATORS.Contains(lastChar) && output.Length > 1)
             {
-                output = output.replace(/.$/, input);
+                return output.Replace(output[output.Length - 1], input);
             }
             return output;
         }
