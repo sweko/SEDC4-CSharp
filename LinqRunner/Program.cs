@@ -11,7 +11,7 @@ namespace LinqRunner
     {
         static void Main(string[] args)
         {
-            
+
             var persons = InitPersons();
             PrintItems(persons);
             /*
@@ -59,8 +59,8 @@ namespace LinqRunner
 
             var mu40 = persons
                 .Filter(p => p.Gender == Gender.Male)
-                .Filter(p => p.Age < 40)
-                .Filter(p => p.FirstName.Length > p.LastName.Length);
+                .Where(p => p.Age < 40)
+                .Where(p => p.FirstName.Length > p.LastName.Length);
 
             PrintItems(mu40);
         }
@@ -203,18 +203,18 @@ namespace LinqRunner
         //    return result;
         //}
 
-        private static IEnumerable<T> GetItemFilter<T>(IEnumerable<T> items, Func<T, bool> filter)
-        {
-            var result = new Queue<T>();
-            foreach (var item in items)
-            {
-                if (filter(item))
-                {
-                    result.Enqueue(item);
-                }
-            }
-            return result;
-        }
+        //private static IEnumerable<T> GetItemFilter<T>(IEnumerable<T> items, Func<T, bool> filter)
+        //{
+        //    var result = new Queue<T>();
+        //    foreach (var item in items)
+        //    {
+        //        if (filter(item))
+        //        {
+        //            result.Enqueue(item);
+        //        }
+        //    }
+        //    return result;
+        //}
 
         private static void PrintItems<T>(IEnumerable<T> items)
         {
