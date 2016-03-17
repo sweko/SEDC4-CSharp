@@ -42,10 +42,39 @@ namespace SelectRunner
                 .Map(p => $"{p.LastName}, {p.FirstName}");
             names.PrintItems();
 
-            IEnumerable<int> ages = InitPersons().Select(p => p.Age);
-            Console.WriteLine(ages.GetType().FullName);
+            IEnumerable<int> ages = InitPersons().Select(p => p.Age).ToList();
+            Console.WriteLine(ages.GetType().Name);
             ages.PrintItems();
 
+            var groups = InitPersons()
+                .GroupBy(p => p.LastName)
+                .Where(group => group.Count() > 1)
+                .ToDictionary(g=> g.Key, g => g.ToList());
+
+            foreach (var group in groups)
+            {
+                Console.WriteLine(group.Key);
+                group.Value.PrintItems();
+            }
+
+            var sumAge = InitPersons().Sum(p => p.Age);
+
+            var aggAge = InitPersons().Aggregate(0, (a, p) => a + p.Age);
+
+            Console.WriteLine(sumAge);
+            Console.WriteLine(aggAge);
+
+            var sum = string.Empty;
+            foreach (var item in InitPersons())
+            {
+                sum = sum + " " + item.LastName;
+            }
+
+            var aggLastName = InitPersons().Aggregate(string.Empty, (a, p) => a + " " + p.LastName);
+            Console.WriteLine(aggLastName);
+
+            var persons = groups.SelectMany(g => g.Value).ToList();
+            persons.PrintItems();
 
         }
 
