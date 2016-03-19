@@ -53,7 +53,7 @@ namespace Calculator
 
         private static string ProcessOperator(char input, string output)
         {
-            var lastChar = output[output.Length - 1];
+            var lastChar = output.Last();
             if (output != "0" && !OPERATORS.Contains(lastChar))
             {
                 return output + input;
@@ -74,10 +74,10 @@ namespace Calculator
         {
             var result = 0;
             var equation = expression;
-            var lastChar = equation[equation.length - 1];
-            if (isContained(lastChar, OPERATORS))
+            var lastChar = equation.Last();
+            if (OPERATORS.Contains(lastChar))
             {
-                equation = equation.substring(0, equation.length - 1);
+                equation = equation.Substring(0, equation.Length - 1);
             }
             if (equation)
             {
