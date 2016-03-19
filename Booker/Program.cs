@@ -45,6 +45,46 @@ namespace Booker
                 };
 
             Console.WriteLine(JsonConvert.SerializeObject(result));
+
+
+            //	var authorPages = 
+            //		from a in authors
+            //		join b in books on a.ID equals b.AuthorID
+            //		let ab = new {
+            //			a.ID, 
+            //			FullName = a.FirstName + " " + a.LastName, 
+            //			b.PageCount
+            //		}
+            //		group ab by ab.FullName into g
+            //		select new {
+            //			AuthorName = g.Key,
+            //			TotalPages = g.Sum(ba => ba.PageCount)
+            //		};
+            //		
+            //	Console.WriteLine(JsonConvert.SerializeObject(authorPages));
+
+            //	var authorPages =
+            //		from a in authors
+            //		select new {
+            //			AuthorName = a.FirstName + " " + a.LastName,
+            //			TotalPages = (from b in books
+            //							where b.AuthorID == a.ID
+            //							select b.PageCount).Sum()
+            //		};
+            //	Console.WriteLine(JsonConvert.SerializeObject(authorPages));
+
+            var authorPages = from b in books
+                         group b.PageCount by b.AuthorID into g
+                         select new
+                         {
+                             //AuthorID = g.Key,
+                             Pages = g.Sum(),
+                             AuthorName = (from a in authors
+                                           where a.ID == g.Key
+                                           select a.FirstName + " " + a.LastName).First()
+                         };
+
+            Console.WriteLine(JsonConvert.SerializeObject(authorPages));
         }
 
         static void InitBooks()
