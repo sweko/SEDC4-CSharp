@@ -8,11 +8,7 @@ namespace Homework_Animals
 {
     class Cat : Animal
     {
-        public override string Name { get; set; }
-        public override string Specie { get; set; }
-        public override string Color { get; set; }
         public string Breed { get; set; }
-        public override string Age { get; set; }
 
         public Cat(string name, string specie, string color, string breed ,string age)
         {
@@ -23,9 +19,10 @@ namespace Homework_Animals
             Age = age;
         }
 
-        public override string makeSound()
+        public override string MakeSound()
         {
-            return ("Meow!");
+            return ("Cat says: Meow!");
         }
+
     }
 }
