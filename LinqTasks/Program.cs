@@ -31,6 +31,11 @@ namespace LinqTasks
                 .OrderByDescending(p => p.Age)
                 .First().LastName;
 
+            var oldestLastNameLinq =
+                (from p in InitPersons()
+                 orderby p.Age descending
+                 select p).First().LastName;
+
             Console.WriteLine($"oldest is >>{oldestLastName}<<");
         }
 
