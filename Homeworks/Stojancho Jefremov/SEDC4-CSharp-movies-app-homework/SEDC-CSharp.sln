@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exercises", "Exercises", "{24A94C59-D7E4-43C9-88DA-9581C17C3607}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{5B21F81F-0FC1-4275-A72E-03DA51AFA166}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinClient", "WinClient\WinClient.csproj", "{29688210-4AF3-48DB-B274-A5EFBFABA415}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieClasses", "MovieClasses\MovieClasses.csproj", "{47E0A9A1-0760-466D-9781-06C98BC0394D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieManagement", "MovieManagement\MovieManagement.csproj", "{54C4776D-E46B-4D5B-B7AF-5CE1515B59A0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{29688210-4AF3-48DB-B274-A5EFBFABA415}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29688210-4AF3-48DB-B274-A5EFBFABA415}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29688210-4AF3-48DB-B274-A5EFBFABA415}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29688210-4AF3-48DB-B274-A5EFBFABA415}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47E0A9A1-0760-466D-9781-06C98BC0394D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47E0A9A1-0760-466D-9781-06C98BC0394D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47E0A9A1-0760-466D-9781-06C98BC0394D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47E0A9A1-0760-466D-9781-06C98BC0394D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54C4776D-E46B-4D5B-B7AF-5CE1515B59A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54C4776D-E46B-4D5B-B7AF-5CE1515B59A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54C4776D-E46B-4D5B-B7AF-5CE1515B59A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54C4776D-E46B-4D5B-B7AF-5CE1515B59A0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5B21F81F-0FC1-4275-A72E-03DA51AFA166} = {24A94C59-D7E4-43C9-88DA-9581C17C3607}
+		{29688210-4AF3-48DB-B274-A5EFBFABA415} = {5B21F81F-0FC1-4275-A72E-03DA51AFA166}
+		{47E0A9A1-0760-466D-9781-06C98BC0394D} = {5B21F81F-0FC1-4275-A72E-03DA51AFA166}
+		{54C4776D-E46B-4D5B-B7AF-5CE1515B59A0} = {5B21F81F-0FC1-4275-A72E-03DA51AFA166}
+	EndGlobalSection
+EndGlobal
