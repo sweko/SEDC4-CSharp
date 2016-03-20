@@ -52,17 +52,18 @@
             this.btn7.Location = new System.Drawing.Point(25, 87);
             this.btn7.Name = "btn7";
             this.btn7.Size = new System.Drawing.Size(54, 36);
-            this.btn7.TabIndex = 0;
+            this.btn7.TabIndex = 16;
             this.btn7.Text = "7";
             this.btn7.UseVisualStyleBackColor = true;
             this.btn7.Click += new System.EventHandler(this.btn_Click);
             // 
             // btnC
             // 
+            this.btnC.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnC.Location = new System.Drawing.Point(205, 87);
             this.btnC.Name = "btnC";
             this.btnC.Size = new System.Drawing.Size(54, 36);
-            this.btnC.TabIndex = 1;
+            this.btnC.TabIndex = 15;
             this.btnC.Text = "C";
             this.btnC.UseVisualStyleBackColor = true;
             this.btnC.Click += new System.EventHandler(this.btn_Click);
@@ -169,10 +170,11 @@
             // 
             // btnEquals
             // 
+            this.btnEquals.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnEquals.Location = new System.Drawing.Point(85, 213);
             this.btnEquals.Name = "btnEquals";
             this.btnEquals.Size = new System.Drawing.Size(54, 36);
-            this.btnEquals.TabIndex = 15;
+            this.btnEquals.TabIndex = 1;
             this.btnEquals.Text = "=";
             this.btnEquals.UseVisualStyleBackColor = true;
             this.btnEquals.Click += new System.EventHandler(this.btn_Click);
@@ -214,14 +216,16 @@
             this.txtDisplay.Location = new System.Drawing.Point(25, 45);
             this.txtDisplay.Name = "txtDisplay";
             this.txtDisplay.Size = new System.Drawing.Size(234, 32);
-            this.txtDisplay.TabIndex = 16;
+            this.txtDisplay.TabIndex = 0;
             this.txtDisplay.Text = "0";
             this.txtDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Form1
             // 
+            this.AcceptButton = this.btnEquals;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnC;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.txtDisplay);
             this.Controls.Add(this.btnEquals);
@@ -240,9 +244,11 @@
             this.Controls.Add(this.btn9);
             this.Controls.Add(this.btnC);
             this.Controls.Add(this.btn7);
+            this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -11,11 +11,24 @@ namespace Calculator
     public static class Calculator
     {
 
-        private static ReadOnlyCollection<char> OPERATORS = new ReadOnlyCollection<char>
+        private static IReadOnlyDictionary<char, Func<int, int, int>> OPERATORS = 
+            new ReadOnlyDictionary<char, Func<int, int, int>>
             (
-               new List<char> { '*', '/', '+', '-' }
+               new Dictionary<char, Func<int, int, int>>
+               {
+                   { '*',  (a,b) => a * b },
+                   { '/', (a,b) => a / b },
+                   { '+', (a,b) => a + b },
+                   { '-', (a,b) => a - b } 
+               }
             );
 
+        /// <summary>
+        /// Calculates new output value, having the current output value and the last entered character.
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="output"></param>
+        /// <returns></returns>
         public static string ProcessInput(char input, string output)
         {
             
@@ -29,7 +42,7 @@ namespace Calculator
                 return CalculateResult(output).ToString();
             }
 
-            if (OPERATORS.Contains(input))
+            if (OPERATORS.ContainsKey(input))
             {
                 return ProcessOperator(input, output);
             }
@@ -52,10 +65,17 @@ namespace Calculator
             return output;           
         }
 
+        /// <summary>
+        /// Calculates new output value, having the current output value and the last entered character.
+        /// If last entered character is not in OPERANDS then output will be returned unchanged.
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="output"></param>
+        /// <returns></returns>
         private static string ProcessOperator(char input, string output)
         {
             var lastChar = output.Last();
-            if (output != "0" && !OPERATORS.Contains(lastChar))
+            if (output != "0" && !OPERATORS.ContainsKey(lastChar))
             {
                 return output + input;
             }
@@ -64,41 +84,54 @@ namespace Calculator
             {
                 return input.ToString();
             }
-            if (OPERATORS.Contains(lastChar) && output.Length > 1)
+            if (OPERATORS.ContainsKey(lastChar) && output.Length > 1)
             {
                 return output.Substring(0, output.Length - 1) + input;
             }
             return output;
         }
 
-        private static double CalculateResult(string expression)
-        {
-            var result = 0;
-            var equation = expression;
-            var lastChar = equation.Last();
-            if (OPERATORS.Contains(lastChar))
-            {
-                equation = equation.Substring(0, equation.Length - 1);
-            }
-            if (equation.Length > 0)
-            {
-                result = int.Parse(ParseAndCalculate(equation));
-            }
-            return result;
-        }
 
-        private static string ParseAndCalculate(string expression)
+        //private static int CalculateResult(string expression)
+        //{
+        //    var result = 0;
+        //    var equation = expression;
+        //    var lastChar = equation.Last();
+        //    if (OPERATORS.ContainsKey(lastChar))
+        //    {
+        //        equation = equation.Substring(0, equation.Length - 1);
+        //    }
+        //    if (equation.Length > 0)
+        //    {
+        //        result = int.Parse(ParseAndCalculate(equation));
+        //    }
+        //    return result;
+        //}
+
+        /// <summary>
+        /// Calculates the result of a given expression comprised from operators splitted with OPERANDS.
+        /// Priority is given to multiplication and division over addition and subtraction
+        /// </summary>
+        /// <param name="expression"></param>
+        /// <returns></returns>
+        private static int CalculateResult(string expression)
         {
-            var funcs = new List<Func<int, int, int>>
+            var lastChar = expression.Last();
+
+            if (OPERATORS.ContainsKey(lastChar))
             {
-                (a,b) => a * b,
-                (a,b) => a / b,
-                (a,b) => a + b,
-                (a,b) => a - b,
-            };                 // the functions associated with the OPERATORS
-            var tokens = Regex.Split(expression, @"\b")
+                expression = expression.Substring(0, expression.Length - 1);
+            }
+
+            if (expression.Length == 0)
+            {
+                return 0;
+            }
+
+            #region expressionParseAndGettingTheResult
+            var tokens = Regex.Split(expression, @"\b") // split the string into "tokens" (numbers or OPERATORS)
                         .Where(t => t.Length > 0)
-                        .ToList();      // split the string into "tokens" (numbers or OPERATORS)
+                        .ToList();      
 
             for (var operatorsIndex = 0; operatorsIndex < OPERATORS.Count - 1; operatorsIndex += 2)
             {    
@@ -130,25 +163,25 @@ namespace Calculator
                         rightOperandParsed = int.TryParse(tokens[tokensIndex + 1], out rightOperand);
                     }
                     
-                    if (tokens[tokensIndex] == OPERATORS[operatorsIndex].ToString())
+                    if (tokens[tokensIndex] == OPERATORS.Keys.ElementAt(operatorsIndex).ToString())
                     {                         // a sign is found
-                        result = funcs[operatorsIndex](leftOperand, rightOperand);           // call the appropriate function
+                        result = OPERATORS[OPERATORS.Keys.ElementAt(operatorsIndex)](leftOperand, rightOperand);           // call the appropriate function
                         tokens[tokensIndex - 1] = result.ToString();      // store the result as a string
                         tokens.RemoveRange(tokensIndex, 2);  // delete obsolete tokens
                         tokensIndex--;  //and back up one place
                     }
-                    else if (tokens[tokensIndex] == OPERATORS[operatorsIndex + 1].ToString())
+                    else if (tokens[tokensIndex] == OPERATORS.Keys.ElementAt(operatorsIndex + 1).ToString())
                     {                         // a sign is found
                         if (tokens[tokensIndex] == "-" && !leftOperandParsed && rightOperandParsed)
                         {   //unary subtract
                             leftOperand = 0;
-                            result = funcs[operatorsIndex + 1](leftOperand, rightOperand);           // call the appropriate function
+                            result = OPERATORS[OPERATORS.Keys.ElementAt(operatorsIndex + 1)](leftOperand, rightOperand);           // call the appropriate function
                             tokens[tokensIndex] = result.ToString();      // store the result as a string
                             tokens.RemoveRange(tokensIndex + 1, 1);
                         }
                         else
                         {
-                            result = funcs[operatorsIndex + 1](leftOperand, rightOperand);           // call the appropriate function
+                            result = OPERATORS[OPERATORS.Keys.ElementAt(operatorsIndex + 1)](leftOperand, rightOperand);           // call the appropriate function
                             tokens[tokensIndex - 1] = result.ToString();      // store the result as a string
                             tokens.RemoveRange(tokensIndex, 2);  // delete obsolete tokens
                             tokensIndex--;  //and back up one place
@@ -156,8 +189,8 @@ namespace Calculator
                     }
                 }
             }
-            return tokens[0];                  // at the end tokens[] has only one item: the result
-
+            #endregion
+            return int.Parse(tokens[0]);                  // at the end tokens[] has only one item: the result
 
         }
 
