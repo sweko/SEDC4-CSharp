@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Calculator
@@ -28,7 +29,7 @@ namespace Calculator
                 return CalculateResult(output).ToString();
             }
 
-            if (OPERATORS.IndexOf(input) > -1)
+            if (OPERATORS.Contains(input))
             {
                 return ProcessOperator(input, output);
             }
@@ -65,7 +66,7 @@ namespace Calculator
             }
             if (OPERATORS.Contains(lastChar) && output.Length > 1)
             {
-                return output.Replace(output[output.Length - 1], input);
+                return output.Substring(0, output.Length - 1) + input;
             }
             return output;
         }
@@ -79,67 +80,87 @@ namespace Calculator
             {
                 equation = equation.Substring(0, equation.Length - 1);
             }
-            if (equation)
+            if (equation.Length > 0)
             {
-                result = parseInt(parseAndCalculate(equation, OPERATORS));
+                result = int.Parse(ParseAndCalculate(equation));
             }
             return result;
+        }
 
-            function parseAndCalculate(expression, OPERATORS) {
-                var funcs = [multiply, divide, add, subtract];                 // the functions associated with the OPERATORS
-                var tokens = expression.split(/\b /);      // split the string into "tokens" (numbers or OPERATORS)
-                for (var operatorsIndex = 0; operatorsIndex < OPERATORS.length - 1; operatorsIndex += 2)
-                {          // do this for every sign
-                    for (var tokensIndex = 0; tokensIndex < tokens.length; tokensIndex++)
-                    {    // do this for every token
-                        var leftOperand = parseInt(tokens[tokensIndex - 1]);    // convert previous token to number
-                        var rightOperand = parseInt(tokens[tokensIndex + 1]);   //convert next token to number
-                        if (tokens[tokensIndex] == OPERATORS[operatorsIndex])
-                        {                         // a sign is found
-                            var result = funcs[operatorsIndex](leftOperand, rightOperand);           // call the appropriate function
-                            tokens[tokensIndex - 1] = result.toString();      // store the result as a string
-                            tokens.splice(tokensIndex, 2);  // delete obsolete tokens
-                            tokensIndex--;  //and back up one place
+        private static string ParseAndCalculate(string expression)
+        {
+            var funcs = new List<Func<int, int, int>>
+            {
+                (a,b) => a * b,
+                (a,b) => a / b,
+                (a,b) => a + b,
+                (a,b) => a - b,
+            };                 // the functions associated with the OPERATORS
+            var tokens = Regex.Split(expression, @"\b")
+                        .Where(t => t.Length > 0)
+                        .ToList();      // split the string into "tokens" (numbers or OPERATORS)
+
+            for (var operatorsIndex = 0; operatorsIndex < OPERATORS.Count - 1; operatorsIndex += 2)
+            {    
+                // do this for every sign
+                for (var tokensIndex = 0; tokensIndex < tokens.Count; tokensIndex++)
+                {    // do this for every token
+
+                    int leftOperand, rightOperand;
+                    bool leftOperandParsed, rightOperandParsed;
+                    int result;
+
+                    if (tokensIndex == 0)
+                    {
+                        leftOperandParsed = false;
+                        leftOperand = 0;
+                    }
+                    else
+                    {
+                        leftOperandParsed = int.TryParse(tokens[tokensIndex - 1], out leftOperand);
+                    }
+
+                    if (tokensIndex > tokens.Count - 2)
+                    {
+                        rightOperandParsed = false;
+                        rightOperand = 0;
+                    }
+                    else
+                    {
+                        rightOperandParsed = int.TryParse(tokens[tokensIndex + 1], out rightOperand);
+                    }
+                    
+                    if (tokens[tokensIndex] == OPERATORS[operatorsIndex].ToString())
+                    {                         // a sign is found
+                        result = funcs[operatorsIndex](leftOperand, rightOperand);           // call the appropriate function
+                        tokens[tokensIndex - 1] = result.ToString();      // store the result as a string
+                        tokens.RemoveRange(tokensIndex, 2);  // delete obsolete tokens
+                        tokensIndex--;  //and back up one place
+                    }
+                    else if (tokens[tokensIndex] == OPERATORS[operatorsIndex + 1].ToString())
+                    {                         // a sign is found
+                        if (tokens[tokensIndex] == "-" && !leftOperandParsed && rightOperandParsed)
+                        {   //unary subtract
+                            leftOperand = 0;
+                            result = funcs[operatorsIndex + 1](leftOperand, rightOperand);           // call the appropriate function
+                            tokens[tokensIndex] = result.ToString();      // store the result as a string
+                            tokens.RemoveRange(tokensIndex + 1, 1);
                         }
-                        else if (tokens[tokensIndex] == OPERATORS[operatorsIndex + 1])
-                        {                         // a sign is found
-                            if (tokens[tokensIndex] == '-' && isNaN(leftOperand) && !isNaN(rightOperand))
-                            {   //unary subtract
-                                leftOperand = 0;
-                                result = funcs[operatorsIndex + 1](leftOperand, rightOperand);           // call the appropriate function
-                                tokens[tokensIndex] = result.toString();      // store the result as a string
-                                tokens.splice(tokensIndex + 1, 1);
-                            }
-                            else
-                            {
-                                result = funcs[operatorsIndex + 1](leftOperand, rightOperand);           // call the appropriate function
-                                tokens[tokensIndex - 1] = result.toString();      // store the result as a string
-                                tokens.splice(tokensIndex, 2);  // delete obsolete tokens
-                                tokensIndex--;  //and back up one place
-                            }
+                        else
+                        {
+                            result = funcs[operatorsIndex + 1](leftOperand, rightOperand);           // call the appropriate function
+                            tokens[tokensIndex - 1] = result.ToString();      // store the result as a string
+                            tokens.RemoveRange(tokensIndex, 2);  // delete obsolete tokens
+                            tokensIndex--;  //and back up one place
                         }
                     }
                 }
-                return tokens[0];                  // at the end tokens[] has only one item: the result
-
-                
             }
+            return tokens[0];                  // at the end tokens[] has only one item: the result
 
-        function multiply(x, y) {                   // the functions which actually do the math
-                return x * y;
-            }
 
-            function divide(x, y) {                        // the functions which actually do the math
-                return x / y;
-            }
-
-            function add(x, y) {                   // the functions which actually do the math
-                return x + y;
-            }
-
-            function subtract(x, y) {                        // the functions which actually do the math
-                return x - y;
-            }
+        }
 
     }
+
 }

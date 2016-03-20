@@ -28,7 +28,7 @@ namespace Calculator
         private void btn_Click(object sender, EventArgs e)
         {
             var display = txtDisplay;
-            var result = Calculator.ProcessInput((sender as Button).Text, display.Text);
+            var result = Calculator.ProcessInput((sender as Button).Text.First(), display.Text);
 			display.Text = result;
         }
     }
