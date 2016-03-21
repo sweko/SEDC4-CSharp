@@ -1,0 +1,6 @@
+\\esm.evnmk.net\Private$\vnxuserdata\mkjefrs\Desktop\VSExercises\AllPrimes\AllPrimes\bin\Debug\AllPrimes.exe.config
+\\esm.evnmk.net\Private$\vnxuserdata\mkjefrs\Desktop\VSExercises\AllPrimes\AllPrimes\bin\Debug\AllPrimes.exe
+\\esm.evnmk.net\Private$\vnxuserdata\mkjefrs\Desktop\VSExercises\AllPrimes\AllPrimes\bin\Debug\AllPrimes.pdb
+\\esm.evnmk.net\Private$\vnxuserdata\mkjefrs\Desktop\VSExercises\AllPrimes\AllPrimes\obj\Debug\AllPrimes.csprojResolveAssemblyReference.cache
+\\esm.evnmk.net\Private$\vnxuserdata\mkjefrs\Desktop\VSExercises\AllPrimes\AllPrimes\obj\Debug\AllPrimes.exe
+\\esm.evnmk.net\Private$\vnxuserdata\mkjefrs\Desktop\VSExercises\AllPrimes\AllPrimes\obj\Debug\AllPrimes.pdb
