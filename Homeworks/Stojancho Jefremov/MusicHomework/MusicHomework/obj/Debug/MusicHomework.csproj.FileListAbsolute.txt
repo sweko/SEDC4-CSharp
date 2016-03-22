@@ -1,0 +1,6 @@
+\\esm.evnmk.net\Private$\vnxuserdata\mkjefrs\Desktop\VSExercises\MusicHomework\MusicHomework\bin\Debug\MusicHomework.exe.config
+\\esm.evnmk.net\Private$\vnxuserdata\mkjefrs\Desktop\VSExercises\MusicHomework\MusicHomework\bin\Debug\MusicHomework.exe
+\\esm.evnmk.net\Private$\vnxuserdata\mkjefrs\Desktop\VSExercises\MusicHomework\MusicHomework\bin\Debug\MusicHomework.pdb
+\\esm.evnmk.net\Private$\vnxuserdata\mkjefrs\Desktop\VSExercises\MusicHomework\MusicHomework\obj\Debug\MusicHomework.csprojResolveAssemblyReference.cache
+\\esm.evnmk.net\Private$\vnxuserdata\mkjefrs\Desktop\VSExercises\MusicHomework\MusicHomework\obj\Debug\MusicHomework.exe
+\\esm.evnmk.net\Private$\vnxuserdata\mkjefrs\Desktop\VSExercises\MusicHomework\MusicHomework\obj\Debug\MusicHomework.pdb
