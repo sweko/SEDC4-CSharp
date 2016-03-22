@@ -69,6 +69,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booker", "Booker\Booker.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringBuilderDemo", "StringBuilder\StringBuilderDemo.csproj", "{D794F0F0-94E8-4CB7-8784-044C44D76BB4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMusicDepo", "MyMusicDepo\MyMusicDepo.csproj", "{0E208275-EAEE-4CA6-A05A-BCEFCA99B59F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -191,6 +193,10 @@ Global
 		{D794F0F0-94E8-4CB7-8784-044C44D76BB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D794F0F0-94E8-4CB7-8784-044C44D76BB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D794F0F0-94E8-4CB7-8784-044C44D76BB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E208275-EAEE-4CA6-A05A-BCEFCA99B59F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E208275-EAEE-4CA6-A05A-BCEFCA99B59F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E208275-EAEE-4CA6-A05A-BCEFCA99B59F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E208275-EAEE-4CA6-A05A-BCEFCA99B59F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -225,5 +231,6 @@ Global
 		{333F528E-C1CA-43C6-937B-265082AF27C5} = {65278FF7-1248-44C7-A8C8-64F841C64AD1}
 		{10359310-6AFC-4E0A-80D1-651498A98C8D} = {1C4564A2-C18B-4067-9A47-959276EEA9C6}
 		{D794F0F0-94E8-4CB7-8784-044C44D76BB4} = {24A94C59-D7E4-43C9-88DA-9581C17C3607}
+		{0E208275-EAEE-4CA6-A05A-BCEFCA99B59F} = {1C4564A2-C18B-4067-9A47-959276EEA9C6}
 	EndGlobalSection
 EndGlobal
