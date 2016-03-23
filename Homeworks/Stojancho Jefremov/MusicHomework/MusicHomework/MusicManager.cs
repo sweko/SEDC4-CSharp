@@ -29,19 +29,16 @@ namespace MusicHomework
                 {
                     Id = 1,
                     Name = "Red Hot Chilly Peppers",
-                    AlbumIds = new List<int> { 4, 5, 6 }
                 },
                 new Artist
                 {
                     Id = 2,
                     Name = "Tose Proeski",
-                    AlbumIds = new List<int> { 7, 8, 9 }
                 },
                 new Artist
                 {
                     Id = 3,
                     Name = "Dino Merlin",
-                    AlbumIds = new List<int> { 10, 11, 12 }
                 },
             };
         }
@@ -57,7 +54,6 @@ namespace MusicHomework
                     Name = "Californication",
                     Year = 1999,
                     ArtistId = 1,
-                    SongIds = new List<int> { 13, 14, 15 }
                 },
                 new Album
                 {
@@ -65,7 +61,6 @@ namespace MusicHomework
                     Name = "Stadium Arcadium",
                     Year = 2006,
                     ArtistId = 1,
-                    SongIds = new List<int> { 16, 17, 18 }
                 },
                 new Album
                 {
@@ -73,7 +68,6 @@ namespace MusicHomework
                     Name = "By the Way",
                     Year = 2006,//2002 is the true value, it is just for testing 2006
                     ArtistId = 1,
-                    SongIds = new List<int> { 19, 20, 21 }
                 },
                 new Album
                 {
@@ -81,7 +75,6 @@ namespace MusicHomework
                     Name = "The Red Hot Chili Peppers",
                     Year = 1984,
                     ArtistId = 1,
-                    SongIds = new List<int> { 41, 42, 43 }
                 },
                 #endregion
 
@@ -92,7 +85,6 @@ namespace MusicHomework
                     Name = "Igri Bez Granici",
                     Year = 2007,
                     ArtistId = 2,
-                    SongIds = new List<int> { 22, 23, 24 }
                 },
                 new Album
                 {
@@ -100,7 +92,6 @@ namespace MusicHomework
                     Name = "Po Tebe",
                     Year = 2005,
                     ArtistId = 2,
-                    SongIds = new List<int> { 25, 26, 27 }
                 },
                 new Album
                 {
@@ -108,7 +99,6 @@ namespace MusicHomework
                     Name = "The Hardest Thing",
                     Year = 2009,
                     ArtistId = 2,
-                    SongIds = new List<int> { 28, 29, 30 }
                 },
                 #endregion
 
@@ -119,7 +109,6 @@ namespace MusicHomework
                     Name = "Nesto lepo treba da se desi",
                     Year = 1989,
                     ArtistId = 3,
-                    SongIds = new List<int> { 31, 32, 33 }
                 },
                 new Album
                 {
@@ -127,7 +116,6 @@ namespace MusicHomework
                     Name = "Kokuzna vremena",
                     Year = 1985,
                     ArtistId = 3,
-                    SongIds = new List<int> { 34, 35, 36 }
                 },
                 new Album
                 {
@@ -135,7 +123,6 @@ namespace MusicHomework
                     Name = "Tesko meni sa tobom",
                     Year = 1986,
                     ArtistId = 3,
-                    SongIds = new List<int> { 37, 38, 39 }
                 },
                 #endregion
             };
@@ -519,8 +506,7 @@ namespace MusicHomework
                 return (from al in Albums
                         group al by new { al.ArtistId, al.Year } into g
                         where g.Count() > 1
-                        join ar in Artists on g.Key.ArtistId equals ar.Id
-                        select ar).Any();
+                        select g).Any();
             }
         }
 
@@ -543,7 +529,7 @@ namespace MusicHomework
                             AlbumDuration = g1.Sum(s => s.Duration),
                             Album = (from al in Albums
                                      where al.Id == g1.Key
-                                     select al).First()
+                                     select al).Single()
                         }).Average(a => a.AlbumDuration);
             }
         }

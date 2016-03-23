@@ -11,7 +11,6 @@ namespace MusicHomework
         public ushort Year { get; set; }
 
         public int ArtistId { get; set; }
-
-        public IEnumerable<int> SongIds { get; set; }
+        
     }
 }

@@ -8,6 +8,6 @@ namespace MusicHomework
 {
     public class Artist : BaseMusicEntity
     {
-        public IEnumerable<int> AlbumIds { get; set; }
+        
     }
 }
