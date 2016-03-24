@@ -12,6 +12,6 @@ namespace LotrEntities
         int HealthPoints { get; set; }
         int Height { get; set; }
 
-        bool IsDead { get; }
+        bool IsAlive { get; }
     }
 }

@@ -9,7 +9,6 @@ namespace LotrEntities
     public class Vala : IUrukHaiMaster
     {
         public string Name { get; set; }
-        public IEnumerable<UrukHai> Slaves { get; set; }
 
         public override string ToString()
         {

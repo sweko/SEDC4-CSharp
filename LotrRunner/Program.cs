@@ -1,4 +1,7 @@
 ﻿using LotrEntities;
+using LotrEntities.Armors;
+using LotrEntities.Warriors;
+using LotrEntities.Weapons;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,14 +36,12 @@ namespace LotrRunner
             var morgoth = new Vala
             {
                 Name = "Morgoth",
-                Slaves = new List<UrukHai>()
             };
 
             var saruman = new SlaverMaia
             {
                 Name = "Saruman",
                 Color = "White",
-                Slaves = new List<UrukHai>(),
                 Master = morgoth,
             };
 
@@ -48,7 +49,6 @@ namespace LotrRunner
             {
                 Name = "Sauron",
                 Color = "Black",
-                Slaves = new List<UrukHai>(),
                 Master = morgoth,
             };
 
@@ -99,6 +99,55 @@ namespace LotrRunner
             Console.WriteLine(gandalf);
             Console.WriteLine(saruman);
             Console.WriteLine(sauron);
+            Console.WriteLine("---------------------------");
+
+            var elf = new ElfArcher
+            {
+                Name = "Legolas",
+                Weapon = new Bow(150, 60),
+                HealthPoints = 2500,
+                Height = 185,
+                MainArmor = new ElvenArmor { Defense = 120},
+                SideArmor = new Shield { Defense = 30 },
+            };
+
+            var bburukhai = new UrukHai
+            {
+                Name = "Big Bad Urukhai",
+                Weapon = new Sword(200),
+                HealthPoints = 3000,
+                Height = 225,
+                Master  = saruman,
+                MainArmor = new Shield{ Defense = 50},
+            };
+
+            int turn = 0;
+            while (elf.IsAlive && bburukhai.IsAlive)
+            {
+                if (turn % 2 == 0)
+                {
+                    elf.Attack(bburukhai);
+                }
+                else
+                {
+                    bburukhai.Attack(elf);
+                }
+                turn += 1;
+                Console.WriteLine($"Turn #{turn}");
+                Console.WriteLine(elf);
+                Console.WriteLine(bburukhai);
+                Console.WriteLine("---------------------------");
+            }
+
+            if (elf.IsAlive)
+            {
+                Console.WriteLine($"{elf.Name} wins, {bburukhai.Name} is dead");
+            }
+            else
+            {
+                Console.WriteLine($"{bburukhai.Name} wins, {elf.Name} is dead");
+            }
+            
 
         }
     }

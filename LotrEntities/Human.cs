@@ -12,11 +12,11 @@ namespace LotrEntities
         public virtual int Height { get; set; }
         public string Name { get; set; }
 
-        public bool IsDead
+        public bool IsAlive
         {
             get
             {
-                return HealthPoints <= 0;
+                return HealthPoints > 0;
             }
         }
 

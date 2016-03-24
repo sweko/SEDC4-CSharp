@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LotrEntities
+namespace LotrEntities.Armors
 {
-    public class SlaverMaia : Maia, IUrukHaiMaster
+    public interface IArmor
     {
+        int Defense { get; set; }
+        ArmorType Type { get; }
     }
 }
