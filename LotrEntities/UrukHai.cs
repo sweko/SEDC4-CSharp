@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LotrEntities
+{
+    public class UrukHai : IMortal
+    {
+        public int HealthPoints { get; set; }
+        public int Height { get; set; }
+        public string Name { get; set; }
+
+        public IUrukHaiMaster Master { get; set; }
+
+        public bool IsDead
+        {
+            get
+            {
+                return HealthPoints <= 0;
+            }
+        }
+
+        public override string ToString()
+        {
+            return $"{Name} ({HealthPoints}) owned by {Master.Name}";
+        }
+
+    }
+}
