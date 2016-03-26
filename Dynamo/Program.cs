@@ -18,6 +18,13 @@ namespace Dynamo
             y.Year = 1997;
             Console.WriteLine(y);
 
+            dynamic z = DynCreator.GetSomeObject(0.1);
+            z.Add(11);
+            foreach (var item in z)
+            {
+                Console.WriteLine(item);
+            }
+
         }
     }
 

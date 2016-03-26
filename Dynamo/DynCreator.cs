@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dynamo
 {
-    static class DynCreator
+    public static class DynCreator
     {
         static private Random r = new Random();
 
@@ -19,10 +19,11 @@ namespace Dynamo
         {
             if (value > 0.5)
                 return new Person { FirstName = "Wekoslav", LastName = "Stefanovski" };
-            else
+            else if (value > 0.2)
                 return new Vehicle { Make = "Toyota", Model = "Corolla", Year = 2005 };
+            else
+                return new List<int> { 2, 4, 6, 8, 10 };
         }
-
     }
 
     public class Vehicle
