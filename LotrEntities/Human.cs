@@ -1,8 +1,11 @@
-﻿using System;
+﻿using LotrEntities.Warriors;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LotrEntities.Armors;
+using LotrEntities.Weapons;
 
 namespace LotrEntities
 {
@@ -26,4 +29,5 @@ namespace LotrEntities
         }
 
     }
+
 }
