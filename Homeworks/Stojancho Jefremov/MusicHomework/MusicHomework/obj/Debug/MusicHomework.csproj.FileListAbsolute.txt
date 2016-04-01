@@ -1,0 +1,12 @@
+\\esm.evnmk.net\Private$\vnxuserdata\mkjefrs\Desktop\VSExercises\MusicHomework\MusicHomework\bin\Debug\MusicHomework.exe.config
+\\esm.evnmk.net\Private$\vnxuserdata\mkjefrs\Desktop\VSExercises\MusicHomework\MusicHomework\bin\Debug\MusicHomework.exe
+\\esm.evnmk.net\Private$\vnxuserdata\mkjefrs\Desktop\VSExercises\MusicHomework\MusicHomework\bin\Debug\MusicHomework.pdb
+\\esm.evnmk.net\Private$\vnxuserdata\mkjefrs\Desktop\VSExercises\MusicHomework\MusicHomework\obj\Debug\MusicHomework.csprojResolveAssemblyReference.cache
+\\esm.evnmk.net\Private$\vnxuserdata\mkjefrs\Desktop\VSExercises\MusicHomework\MusicHomework\obj\Debug\MusicHomework.exe
+\\esm.evnmk.net\Private$\vnxuserdata\mkjefrs\Desktop\VSExercises\MusicHomework\MusicHomework\obj\Debug\MusicHomework.pdb
+C:\Users\stoja_000\Desktop\Stole\sedcCodeAcademy\GitHub\SEDC4-CSharp\Homeworks\Stojancho Jefremov\MusicHomework\MusicHomework\bin\Debug\MusicHomework.exe.config
+C:\Users\stoja_000\Desktop\Stole\sedcCodeAcademy\GitHub\SEDC4-CSharp\Homeworks\Stojancho Jefremov\MusicHomework\MusicHomework\bin\Debug\MusicHomework.exe
+C:\Users\stoja_000\Desktop\Stole\sedcCodeAcademy\GitHub\SEDC4-CSharp\Homeworks\Stojancho Jefremov\MusicHomework\MusicHomework\bin\Debug\MusicHomework.pdb
+C:\Users\stoja_000\Desktop\Stole\sedcCodeAcademy\GitHub\SEDC4-CSharp\Homeworks\Stojancho Jefremov\MusicHomework\MusicHomework\obj\Debug\MusicHomework.csprojResolveAssemblyReference.cache
+C:\Users\stoja_000\Desktop\Stole\sedcCodeAcademy\GitHub\SEDC4-CSharp\Homeworks\Stojancho Jefremov\MusicHomework\MusicHomework\obj\Debug\MusicHomework.exe
+C:\Users\stoja_000\Desktop\Stole\sedcCodeAcademy\GitHub\SEDC4-CSharp\Homeworks\Stojancho Jefremov\MusicHomework\MusicHomework\obj\Debug\MusicHomework.pdb
