@@ -30,6 +30,9 @@ void Main()
 	field.GetValue(weko).Dump();
 	var p = new Person();
 	field.GetValue(p).Dump();
+	
+	field.SetValue(weko, null);
+	field.GetValue(weko).Dump();
 }
 
 object GetSomething(){
